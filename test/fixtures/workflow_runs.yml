@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workflow: one
+  respondent_id: 1
+  started_at: 2025-12-07 16:43:08
+  finished_at: 2025-12-07 16:43:08
+  outcome_key: MyString
+
+two:
+  workflow: two
+  respondent_id: 1
+  started_at: 2025-12-07 16:43:08
+  finished_at: 2025-12-07 16:43:08
+  outcome_key: MyString

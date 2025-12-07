@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workflow_run: one
+  question: one
+  answer_option: one
+  free_text_answer: MyText
+  answered_at: 2025-12-07 16:43:24
+
+two:
+  workflow_run: two
+  question: two
+  answer_option: two
+  free_text_answer: MyText
+  answered_at: 2025-12-07 16:43:24

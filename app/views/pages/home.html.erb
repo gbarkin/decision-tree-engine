@@ -1,89 +1,15 @@
-<div class="page">
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-layout">
-      <%= image_tag "george.png",
-            alt: "George Barkin",
-            class: "hero-photo" %>
-      <div class="hero-text">
-        <p class="hero-kicker">Hi, I'm George</p>
-
-        <h1 class="hero-title">
-          I build data-driven products and explore ideas through writing,
-          experiments, and music.
-        </h1>
-
-        <p class="hero-subtitle">
-          This is my personal hub for data science work, product thinking,
-          long-form writing, and creative projects.
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="py-5">
+        <h1 class="display-4 fw-bold mb-4">Decision Tree Engine</h1>
+        <p class="lead mb-4">
+          A powerful tool for creating custom question and answer workflows. 
+          Design interactive decision trees that guide users through complex 
+          decision-making processes with ease.
         </p>
-
-        <div class="hero-actions">
-          <a href="#sections" class="btn btn-primary">Explore my work</a>
-          <a href="/blog" class="btn btn-ghost">Read the blog</a>
-        </div>
+        <%= link_to "Get Started", "#", class: "btn btn-primary btn-lg" %>
       </div>
     </div>
   </div>
-</header>
-
-
-  <main id="sections" class="content">
-    <section class="grid">
-      <a href="/data-science" class="card">
-        <div class="card-icon">📊</div>
-        <h2 class="card-title">Data Science</h2>
-        <p class="card-body">
-          Experiments, notebooks, and case studies on modeling, analytics,
-          and turning messy data into decisions.
-        </p>
-        <span class="card-link">View data projects →</span>
-      </a>
-
-      <a href="/product-management" class="card">
-        <div class="card-icon">🧭</div>
-        <h2 class="card-title">Product Management</h2>
-        <p class="card-body">
-          Roadmaps, frameworks, and stories from building data-heavy,
-          mission-critical products.
-        </p>
-        <span class="card-link">Explore product work →</span>
-      </a>
-
-      <a href="/blog" class="card">
-        <div class="card-icon">✍️</div>
-        <h2 class="card-title">Blog</h2>
-        <p class="card-body">
-          Writing on tech, strategy, and whatever I'm currently obsessed with.
-        </p>
-        <span class="card-link">Read posts →</span>
-      </a>
-
-      <a href="/music" class="card">
-        <div class="card-icon">🎸</div>
-        <h2 class="card-title">Music</h2>
-        <p class="card-body">
-          Guitar, ukulele, and recording experiments — the creative side of the dashboard brain.
-        </p>
-        <span class="card-link">Listen & see gear →</span>
-      </a>
-    </section>
-
-    <section class="about">
-      <h2>What ties it all together?</h2>
-      <p>
-        I like building systems that make complex things feel simple — whether that’s
-        a workflow for asylum vetting, a machine learning model, a product roadmap,
-        or a riff that finally feels right.
-      </p>
-      <p>
-        This site is a living notebook of that work. Over time, each section will grow
-        with deeper case studies, experiments, and projects.
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© <%= Time.current.year %> George Barkin · Built with Ruby on Rails in GitHub Codespaces</p>
-  </footer>
 </div>
