@@ -1,0 +1,15 @@
+{
+  "name": "Rails Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "forwardPorts": [3000],
+  "remoteUser": "vscode",
+  "postCreateCommand": "sudo service postgresql start || true"
+}
