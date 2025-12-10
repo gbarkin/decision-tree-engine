@@ -1,0 +1,35 @@
+<h1>Edit Answer for: <%= @answer.question.text %></h1>
+
+<%= form_with model: @answer, local: true do |f| %>
+  <div>
+    <%= f.label :label, "Answer label" %><br>
+    <%= f.text_field :label %>
+  </div>
+
+  <div>
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+
+  <div>
+    <%= f.label :next_question_id, "Next question (optional)" %><br>
+    <%= f.collection_select :next_question_id,
+          @answer.question.workflow.questions,
+          :id,
+          :text,
+          include_blank: true %>
+  </div>
+
+  <div>
+    <%= f.label :outcome_key, "Outcome key (if terminal)" %><br>
+    <%= f.text_field :outcome_key %>
+  </div>
+
+  <div>
+    <%= f.submit "Update Answer" %>
+  </div>
+<% end %>
+
+<p>
+  <%= link_to "Back", workflow_path(@answer.question.workflow) %>
+</p>

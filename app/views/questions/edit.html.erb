@@ -1,0 +1,21 @@
+<h1>Edit Question</h1>
+
+<%= form_with model: @question, local: true do |f| %>
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+
+  <div>
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+
+  <div>
+    <%= f.submit "Update Question" %>
+  </div>
+<% end %>
+
+<p>
+  <%= link_to "Back", workflow_path(@question.workflow) %>
+</p>

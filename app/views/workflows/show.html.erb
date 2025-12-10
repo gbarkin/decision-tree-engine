@@ -1,0 +1,66 @@
+<h1><%= @workflow.name %></h1>
+
+<p><%= @workflow.description %></p>
+
+<p>
+  <strong>Start question:</strong>
+  <%= form_with model: @workflow, local: true do |f| %>
+    <%= f.collection_select :start_question_id,
+          @workflow.questions,
+          :id,
+          :text,
+          include_blank: true %>
+    <%= f.submit "Set start question" %>
+  <% end %>
+</p>
+
+<hr>
+
+<h2>Questions</h2>
+
+<p>
+  <%= link_to "Add Question", new_workflow_question_path(@workflow) %>
+</p>
+
+<% @workflow.questions.each do |q| %>
+  <div style="border: 1px solid #ccc; padding: 8px; margin-top: 8px;">
+    <p>
+      <strong>Question:</strong>
+      <%= q.text %>
+      [<%= link_to "Edit", edit_question_path(q) %>]
+      [<%= link_to "Delete", q, method: :delete, data: { confirm: "Are you sure?" } %>]
+      [<%= link_to "Add Answer", new_question_answer_option_path(q) %>]
+    </p>
+
+    <% if q.answer_options.any? %>
+      <ul>
+        <% q.answer_options.each do |a| %>
+          <li>
+            <strong><%= a.label %></strong>
+            <% if a.next_question_id.present? %>
+              → Next: <%= a.next_question&.text || "(missing question)" %>
+            <% else %>
+              (Terminal<%= ": #{a.outcome_key}" if a.outcome_key.present? %>)
+            <% end %>
+            [<%= link_to "Edit", edit_answer_option_path(a) %>]
+            [<%= link_to "Delete", a, method: :delete, data: { confirm: "Are you sure?" } %>]
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No answers yet.</p>
+    <% end %>
+  </div>
+<% end %>
+
+<hr>
+
+<p>
+  <%= button_to "Try this workflow",
+        start_run_workflow_path(@workflow),
+        method: :post %>
+</p>
+
+<p>
+  <%= link_to "Back to all workflows", workflows_path %>
+</p>

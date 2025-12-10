@@ -1,0 +1,25 @@
+<% if question.nil? %>
+  <p>Workflow complete.</p>
+  <p>Outcome: <%= run.outcome_key || "unknown" %></p>
+
+  <p>
+    <%= link_to "Back to workflow", workflow_path(run.workflow) %>
+  </p>
+<% else %>
+  <h2><%= question.text %></h2>
+
+  <ul>
+    <% question.answer_options.each do |answer| %>
+      <li>
+        <%= button_to answer.label,
+              answer_workflow_run_path(
+                run,
+                question_id: question.id,
+                answer_option_id: answer.id
+              ),
+              method: :post,
+              form: { data: { turbo_stream: true } } %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

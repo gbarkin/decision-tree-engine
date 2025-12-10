@@ -4,7 +4,7 @@ one:
   question: one
   label: MyString
   value: MyString
-  next_question_id: 1
+  next_question: one
   outcome_key: MyString
   position: 1
 
@@ -12,6 +12,6 @@ two:
   question: two
   label: MyString
   value: MyString
-  next_question_id: 1
+  next_question: two
   outcome_key: MyString
   position: 1

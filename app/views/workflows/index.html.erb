@@ -1,0 +1,16 @@
+<h1>Workflows</h1>
+
+<p>
+  <%= link_to "New Workflow", new_workflow_path, class: "btn btn-primary" %>
+</p>
+
+<ul>
+  <% @workflows.each do |wf| %>
+    <li>
+      <%= link_to wf.name, workflow_path(wf) %>
+      <% if wf.description.present? %>
+        – <%= wf.description %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
